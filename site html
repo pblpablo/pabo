@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #444; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { padding: 20px; }
+        .section { margin-bottom: 20px; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <p>Aqui você encontra meus projetos e informações de contato</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="container">
+        <section id="sobre" class="section">
+            <h2>Sobre Mim</h2>
+            <p>Sou desenvolvedor web com experiência em HTML, CSS e JavaScript. Amo criar interfaces intuitivas e funcionais.</p>
+        </section>
+
+        <section id="projetos" class="section">
+            <h2>Projetos</h2>
+            <ul>
+                <li>Projeto 1 - Um site de exemplo para portfólio</li>
+                <li>Projeto 2 - Um jogo de aventura interativa em HTML e JavaScript</li>
+                <li>Projeto 3 - Uma calculadora com HTML, CSS e JavaScript</li>
+            </ul>
+        </section>
+
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo pelo e-mail: exemplo@meusite.com</p>
+            <p>Siga-me nas redes sociais: 
+                <a href="https://facebook.com" target="_blank">Facebook</a> | 
+                <a href="https://instagram.com" target="_blank">Instagram</a> | 
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Meu Portfólio</p>
+    </footer>
+
+</body>
+</html>
