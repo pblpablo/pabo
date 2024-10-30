@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Interativa</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .opcao { margin: 10px; padding: 10px; border: 1px solid #333; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Aventura Interativa</h1>
+    <p id="texto">Você está em uma floresta escura e vê um caminho se dividindo em dois. Você pode ir para a esquerda ou para a direita. Qual você escolhe?</p>
+
+    <div id="opcoes">
+        <div class="opcao" onclick="escolher('esquerda')">Ir para a esquerda</div>
+        <div class="opcao" onclick="escolher('direita')">Ir para a direita</div>
+    </div>
+
+    <script>
+        function escolher(direcao) {
+            const texto = document.getElementById('texto');
+            const opcoes = document.getElementById('opcoes');
+            
+            if (direcao === 'esquerda') {
+                texto.innerHTML = "Você encontrou um tesouro escondido! Parabéns, você ganhou!";
+                opcoes.innerHTML = '<div class="opcao" onclick="reiniciar()">Reiniciar Aventura</div>';
+            } else if (direcao === 'direita') {
+                texto.innerHTML = "Você encontrou um monstro e ele te assustou. Infelizmente, você perdeu!";
+                opcoes.innerHTML = '<div class="opcao" onclick="reiniciar()">Reiniciar Aventura</div>';
+            }
+        }
+
+        function reiniciar() {
+            document.getElementById('texto').innerHTML = "Você está em uma floresta escura e vê um caminho se dividindo em dois. Você pode ir para a esquerda ou para a direita. Qual você escolhe?";
+            document.getElementById('opcoes').innerHTML = `
+                <div class="opcao" onclick="escolher('esquerda')">Ir para a esquerda</div>
+                <div class="opcao" onclick="escolher('direita')">Ir para a direita</div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
