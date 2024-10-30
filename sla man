@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vídeos</title>
+    <style>
+        /* Estilos básicos para o layout da página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .video-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .video-card img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .video-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        .video-card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Vídeos</h1>
+    <div class="grid-container">
+        <!-- Cartão de Vídeo 1 -->
+        <div class="video-card">
+            <img src="thumbnail1.jpg" alt="Miniatura do Vídeo 1">
+            <h3>Título do Vídeo 1</h3>
+            <a href="link-do-video-1">Assistir Vídeo</a>
+        </div>
+        
+        <!-- Cartão de Vídeo 2 -->
+        <div class="video-card">
+            <img src="thumbnail2.jpg" alt="Miniatura do Vídeo 2">
+            <h3>Título do Vídeo 2</h3>
+            <a href="link-do-video-2">Assistir Vídeo</a>
+        </div>
+
+        <!-- Repita este bloco para mais vídeos -->
+    </div>
+</body>
+</html>
