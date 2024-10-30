@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Cards para Estudos</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; flex-direction: column; margin: 0; padding: 0; min-height: 100vh; background-color: #f4f4f9; }
+        h1 { color: #333; }
+        .flashcards { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+        .card { width: 200px; height: 120px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; text-align: center; background-color: #fff; cursor: pointer; position: relative; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.05); }
+        .card-back { display: none; font-size: 16px; color: #333; }
+        .card-front { font-size: 18px; color: #555; }
+        .card.flipped .card-front { display: none; }
+        .card.flipped .card-back { display: block; }
+        .form-container { margin-top: 20px; text-align: center; }
+        .form-container input, .form-container button { padding: 8px; margin: 5px; font-size: 16px; }
+        .form-container input { width: 200px; }
+    </style>
+</head>
+<body>
+
+    <h1>Flash Cards de Estudo</h1>
+
+    <div class="flashcards" id="flashcards"></div>
+
+    <div class="form-container">
+        <input type="text" id="pergunta" placeholder="Digite a pergunta" required>
+        <input type="text" id="resposta" placeholder="Digite a resposta" required>
+        <button onclick="adicionarCard()">Adicionar Card</button>
+    </div>
+
+    <script>
+        // Array para armazenar os flashcards
+        let cards = [];
+
+        // Função para renderizar os flashcards na tela
+        function renderizarCards() {
+            const flashcards = document.getElementById('flashcards');
+            flashcards.innerHTML = ''; // Limpa os cards antes de renderizar
+            
+            cards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+                cardElement.innerHTML = `
+                    <div class="card-front">${card.pergunta}</div>
+                    <div class="card-back">${card.resposta}</div>
+                `;
+                cardElement.addEventListener('click', () => {
+                    cardElement.classList.toggle('flipped');
+                });
+                flashcards.appendChild(cardElement);
+            });
+        }
+
+        // Função para adicionar um novo card
+        function adicionarCard() {
+            const pergunta = document.getElementById('pergunta').value;
+            const resposta = document.getElementById('resposta').value;
+            
+            if (pergunta && resposta) {
+                cards.push({ pergunta, resposta });
+                renderizarCards();
+                
+                // Limpar os campos de entrada
+                document.getElementById('pergunta').value = '';
+                document.getElementById('resposta').value = '';
+            } else {
+                alert('Por favor, preencha tanto a pergunta quanto a resposta.');
+            }
+        }
+    </script>
+
+</body>
+</html>
